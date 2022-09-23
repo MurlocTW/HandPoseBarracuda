@@ -15,6 +15,7 @@ Desktop.ini
 
 # Unity
 /Library
+/obj
 /Logs
 /Recordings
 /UserSettings

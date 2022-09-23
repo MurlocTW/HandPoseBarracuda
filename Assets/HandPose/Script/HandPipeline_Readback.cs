@@ -19,7 +19,7 @@ sealed partial class HandPipeline
 
     Vector4[] UpdateReadCache()
     {
-        _buffer.filter.GetData(_readCache, 0, 0, KeyPointCount);
+        _filterBuffer.GetData(_readCache, 0, 0, KeyPointCount);
         _readFlag = true;
         return _readCache;
     }
@@ -28,7 +28,7 @@ sealed partial class HandPipeline
     {
         if (UseAsyncReadback)
             AsyncGPUReadback.Request
-              (_buffer.filter, ReadbackBytes, 0, ReadbackCompleteAction);
+              (_filterBuffer, ReadbackBytes, 0, ReadbackCompleteAction);
         else
             _readFlag = false;
     }

@@ -19,10 +19,12 @@ sealed partial class HandPipeline : System.IDisposable
     ResourceSet _resources;
 
     (PalmDetector palm, HandLandmarkDetector landmark) _detector;
-
-    (ComputeBuffer input, ComputeBuffer crop,
-     ComputeBuffer region, ComputeBuffer filter) _buffer;
-
+    
+    private ComputeBuffer _inputBuffer;
+    private ComputeBuffer _cropBuffer;
+    private ComputeBuffer _regionBuffer;
+    private ComputeBuffer _filterBuffer;
+    
     #endregion
 
     #region Object allocation/deallocation
@@ -39,20 +41,21 @@ sealed partial class HandPipeline : System.IDisposable
         var regionStructSize = sizeof(float) * 24;
         var filterBufferLength = HandLandmarkDetector.VertexCount * 2;
 
-        _buffer = (new ComputeBuffer(inputBufferLength, sizeof(float)),
-                   new ComputeBuffer(cropBufferLength, sizeof(float)),
-                   new ComputeBuffer(1, regionStructSize),
-                   new ComputeBuffer(filterBufferLength, sizeof(float) * 4));
+        _inputBuffer = new ComputeBuffer(inputBufferLength, sizeof(float));
+        _cropBuffer = new ComputeBuffer(cropBufferLength, sizeof(float));
+        _regionBuffer = new ComputeBuffer(1, regionStructSize);
+        _filterBuffer = new ComputeBuffer(filterBufferLength, sizeof(float) * 4);
     }
 
     void DeallocateObjects()
     {
         _detector.palm.Dispose();
         _detector.landmark.Dispose();
-        _buffer.input.Dispose();
-        _buffer.crop.Dispose();
-        _buffer.region.Dispose();
-        _buffer.filter.Dispose();
+        
+        _inputBuffer.Dispose();
+        _cropBuffer.Dispose();
+        _regionBuffer.Dispose();
+        _filterBuffer.Dispose();
     }
 
     #endregion

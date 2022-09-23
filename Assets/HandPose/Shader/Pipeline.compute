@@ -2,15 +2,15 @@
 // Postprocessing compute shader for the hand mesh pipeline
 //
 
-#pragma kernel spad_kernel
-#pragma kernel bbox_kernel
-#pragma kernel crop_kernel
-#pragma kernel post_kernel
+#pragma kernel spad_kernel //idx 0
+#pragma kernel bbox_kernel //idx 1
+#pragma kernel crop_kernel //idx 2
+#pragma kernel post_kernel //idx 3
 
 #include "HandRegion.hlsl"
 #include "LowPassFilter.hlsl"
 #include "Misc.hlsl"
-#include "Packages/jp.keijiro.mediapipe.blazepalm/Shader/Struct.hlsl"
+#include "Assets/BlazePalm/Shader/Struct.hlsl"
 
 //
 // Kernel 0: Input image scaling and padding (letterboxing)

@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace MediaPipe.HandPose {
-
 public sealed class WebcamInput : MonoBehaviour
 {
     #region Editable attributes
@@ -23,7 +21,7 @@ public sealed class WebcamInput : MonoBehaviour
     #region Public properties
 
     public Texture Texture
-      => _dummyImage != null ? (Texture)_dummyImage : (Texture)_buffer;
+        => _dummyImage != null ? (Texture)_dummyImage : (Texture)_buffer;
 
     #endregion
 
@@ -33,7 +31,7 @@ public sealed class WebcamInput : MonoBehaviour
     {
         if (_dummyImage != null) return;
         _webcam = new WebCamTexture
-          (_deviceName, _resolution.x, _resolution.y, (int)_frameRate);
+            (_deviceName, _resolution.x, _resolution.y, (int)_frameRate);
         _buffer = new RenderTexture(_resolution.x, _resolution.y, 0);
         _webcam.Play();
     }
@@ -63,4 +61,3 @@ public sealed class WebcamInput : MonoBehaviour
     #endregion
 }
 
-} // namespace MediaPipe.HandPose

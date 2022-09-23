@@ -33,13 +33,13 @@ partial class HandPipeline
     #region GPU-side resource accessors
 
     public ComputeBuffer KeyPointBuffer
-      => _buffer.filter;
+      => _filterBuffer;
 
     public ComputeBuffer HandRegionBuffer
-      => _buffer.region;
+      => _regionBuffer;
 
     public ComputeBuffer HandRegionCropBuffer
-      => _buffer.crop;
+      => _cropBuffer;
 
     #endregion
 

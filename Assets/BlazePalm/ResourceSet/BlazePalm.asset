@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6071e911076762d4da30d63e3337db89, type: 3}
+  m_Name: BlazePalm
+  m_EditorClassIdentifier: 
+  model: {fileID: 5022602860645237092, guid: bb191cdbf3864e74e9f6e43d7329f32a, type: 3}
+  preprocess: {fileID: 7200000, guid: 0e8d457075d9aaa42b063475a2d626c2, type: 3}
+  postprocess1: {fileID: 7200000, guid: e4d017dc2f7baf84fbd35768e4741723, type: 3}
+  postprocess2: {fileID: 7200000, guid: 4b0dd1ce8b9e06f49a70f23c4fba0dc3, type: 3}

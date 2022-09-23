@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c86e0f695cb8b4bb773e68b9ccdf13, type: 3}
+  m_Name: HandLandmark
+  m_EditorClassIdentifier: 
+  model: {fileID: 5022602860645237092, guid: 0d11e637fcd6b3c4da6c4591b42a2fb0, type: 3}
+  preprocess: {fileID: 7200000, guid: 1fef980e8852490428242ddbf569d81a, type: 3}
+  postprocess: {fileID: 7200000, guid: d16eaf784390d4c47a832c22a104b94a, type: 3}

@@ -1,8 +1,6 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MediaPipe.HandPose {
-
 [CustomEditor(typeof(WebcamInput))]
 sealed class WebcamInputEditor : Editor
 {
@@ -27,9 +25,9 @@ sealed class WebcamInputEditor : Editor
 
         foreach (var device in WebCamTexture.devices)
             menu.AddItem(new GUIContent(device.name), false,
-                         () => { serializedObject.Update();
-                                 _deviceName.stringValue = device.name;
-                                 serializedObject.ApplyModifiedProperties(); });
+                () => { serializedObject.Update();
+                    _deviceName.stringValue = device.name;
+                    serializedObject.ApplyModifiedProperties(); });
 
         menu.DropDown(rect);
     }
@@ -55,5 +53,3 @@ sealed class WebcamInputEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 }
-
-} // namespace MediaPipe.HandPose
